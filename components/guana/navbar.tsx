@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X, Trophy } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 
 const links = [
   { href: "#beneficios", label: "Beneficios" },
@@ -31,12 +32,18 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md gold-gradient text-black">
-            <Trophy className="h-5 w-5" strokeWidth={2.5} />
-            <span className="absolute inset-0 rounded-md ring-1 ring-[rgba(212,175,55,0.6)] group-hover:ring-2 transition" />
+        <a href="#" className="flex items-center gap-3 group">
+          <span className="relative inline-flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-lg overflow-hidden bg-black ring-1 ring-[rgba(212,175,55,0.35)] group-hover:ring-gold transition shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+            <Image
+              src="/logo.png"
+              alt="Guana Boosting"
+              width={96}
+              height={96}
+              className="h-full w-full object-contain scale-125"
+              priority
+            />
           </span>
-          <span className="font-display text-xl tracking-widest">
+          <span className="font-display text-lg md:text-xl tracking-widest hidden sm:inline">
             GUANA <span className="gold-text-gradient">BOOSTING</span>
           </span>
         </a>

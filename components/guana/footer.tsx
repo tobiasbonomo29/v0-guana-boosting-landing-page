@@ -1,4 +1,5 @@
-import { Trophy, MessageCircle, Instagram, Send } from "lucide-react"
+import Image from "next/image"
+import { MessageCircle, Instagram, Send } from "lucide-react"
 
 const navCols = [
   {
@@ -21,9 +22,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md gold-gradient text-black">
-                <Trophy className="h-5 w-5" strokeWidth={2.5} />
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg overflow-hidden bg-black ring-1 ring-[rgba(212,175,55,0.35)] shadow-[0_0_25px_rgba(212,175,55,0.25)]">
+                <Image
+                  src="/logo.png"
+                  alt="Guana Boosting"
+                  width={120}
+                  height={120}
+                  className="h-full w-full object-contain scale-125"
+                />
               </span>
               <span className="font-display text-xl tracking-widest">
                 GUANA <span className="gold-text-gradient">BOOSTING</span>

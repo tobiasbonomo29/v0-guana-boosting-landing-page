@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Play, ShoppingCart, Shield, Radio, Zap, Trophy } from "lucide-react"
 import { Particles } from "./particles"
@@ -158,10 +159,16 @@ function FutCard() {
             </div>
           </div>
 
-          {/* Player silhouette */}
+          {/* Logo emblem */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative w-48 h-48 rounded-full bg-gradient-to-b from-[rgba(212,175,55,0.25)] to-transparent flex items-center justify-center">
-              <Trophy className="h-24 w-24 text-gold drop-shadow-[0_0_30px_rgba(212,175,55,0.8)]" strokeWidth={1.5} />
+            <div className="relative w-56 h-56 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.25),transparent_70%)] flex items-center justify-center">
+              <Image
+                src="/logo.png"
+                alt="Guana Boosting emblem"
+                width={400}
+                height={400}
+                className="w-52 h-52 object-contain drop-shadow-[0_0_40px_rgba(212,175,55,0.6)]"
+              />
             </div>
           </div>
 
