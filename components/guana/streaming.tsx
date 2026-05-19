@@ -1,0 +1,185 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Eye, Users, MessageSquare, Heart } from "lucide-react"
+
+export function Streaming() {
+  return (
+    <section id="streaming" className="relative py-24 md:py-32 overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 80% at 50% 50%, rgba(122,0,18,0.35), transparent 60%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-4 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Stream mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
+            <div className="absolute -inset-4 bg-gradient-to-br from-[rgba(220,30,50,0.3)] via-transparent to-[rgba(212,175,55,0.2)] blur-2xl" />
+
+            <div className="relative rounded-xl overflow-hidden premium-border">
+              {/* Top bar */}
+              <div className="flex items-center justify-between bg-[#0a0a0a] px-4 py-2.5 border-b border-[rgba(212,175,55,0.15)]">
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+                </div>
+                <span className="text-[10px] text-muted-foreground tracking-wider">guana_boosting · LIVE</span>
+                <span className="text-[10px] text-muted-foreground">●●●</span>
+              </div>
+
+              {/* Video area */}
+              <div className="relative aspect-video">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/stream-mockup.jpg')" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+
+                {/* Live badge */}
+                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded bg-red-600 px-2.5 py-1 text-[11px] font-bold tracking-widest text-white live-pulse">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                  EN VIVO
+                </div>
+
+                {/* Viewer count */}
+                <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded bg-black/60 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-white border border-white/10">
+                  <Eye className="h-3 w-3" />
+                  1,247
+                </div>
+
+                {/* Score overlay */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 rounded-md bg-black/70 backdrop-blur px-4 py-2 border border-[rgba(212,175,55,0.3)]">
+                  <span className="font-display text-lg text-gold">3</span>
+                  <span className="text-xs text-muted-foreground">VS</span>
+                  <span className="font-display text-lg text-foreground">1</span>
+                  <span className="text-[10px] uppercase tracking-wider text-gold ml-1">82'</span>
+                </div>
+
+                {/* Bottom info */}
+                <div className="absolute bottom-0 inset-x-0 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full gold-gradient flex items-center justify-center text-black font-display text-sm">
+                      GB
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-white">Pro Player · Rank I</div>
+                      <div className="text-[10px] text-white/60">FUT Champions Finals · Game 8/15</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat */}
+              <div className="bg-[#0a0a0a] border-t border-[rgba(212,175,55,0.15)] p-3 space-y-1.5 text-[11px]">
+                <div className="flex gap-2">
+                  <span className="text-gold font-semibold">Owner:</span>
+                  <span className="text-muted-foreground">Vamos! 3 a 1, faltan 8 minutos 🔥</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-red-400 font-semibold">ProPlayer:</span>
+                  <span className="text-muted-foreground">Tranqui, lo cerramos seguro</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-gold font-semibold">Owner:</span>
+                  <span className="text-muted-foreground">Increíble el jugadazo</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating cards */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="hidden md:block absolute -right-6 top-12 rounded-lg border border-[rgba(212,175,55,0.3)] bg-card/90 backdrop-blur px-4 py-3 glow-gold"
+            >
+              <div className="flex items-center gap-2">
+                <Heart className="h-4 w-4 text-red-500 fill-red-500" />
+                <span className="text-xs font-semibold">+2.4k</span>
+              </div>
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="hidden md:block absolute -left-6 bottom-20 rounded-lg border border-[rgba(212,175,55,0.3)] bg-card/90 backdrop-blur px-4 py-3"
+            >
+              <div className="flex items-center gap-2">
+                <MessageSquare className="h-4 w-4 text-gold" />
+                <span className="text-xs font-semibold">Chat activo</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Copy */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="inline-flex items-center gap-2 rounded-full bg-red-600/15 border border-red-600/30 px-3 py-1 mb-5">
+              <span className="relative inline-flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.22em] text-red-400 font-semibold">
+                Streaming en directo
+              </span>
+            </div>
+
+            <h2 className="font-display text-4xl md:text-6xl leading-[0.95] text-balance">
+              MIRÁ CADA <br />
+              PARTIDO EN <br />
+              <span className="gold-text-gradient">TIEMPO REAL</span>
+            </h2>
+
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed text-pretty">
+              Somos el <span className="text-gold font-semibold">único servicio</span> que transmite el 100% del
+              boosting en vivo. Sin trampas, sin escondites, sin sorpresas. Total transparencia para tu cuenta.
+            </p>
+
+            <ul className="mt-8 space-y-4">
+              {[
+                { icon: Eye, label: "Mirá cada partido en tiempo real" },
+                { icon: Users, label: "Transparencia y seguridad total" },
+                { icon: MessageSquare, label: "Chat directo con el pro player" },
+              ].map((item) => (
+                <li key={item.label} className="flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgba(212,175,55,0.25)] bg-[rgba(212,175,55,0.06)]">
+                    <item.icon className="h-4 w-4 text-gold" />
+                  </span>
+                  <span className="text-sm md:text-base text-foreground">{item.label}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#precios"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-md font-semibold text-black gold-gradient hover:opacity-95 transition glow-gold"
+              >
+                Empezar ahora
+              </a>
+              <a
+                href="#contacto"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-md font-semibold border border-[rgba(212,175,55,0.3)] text-gold hover:bg-[rgba(212,175,55,0.06)] transition"
+              >
+                Ver demo en Discord
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
