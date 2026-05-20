@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Eye, Users, MessageSquare, Heart } from "lucide-react"
+import Image from "next/image"
 
 export function Streaming() {
   return (
@@ -142,6 +143,34 @@ export function Streaming() {
               PARTIDO EN <br />
               <span className="gold-text-gradient">TIEMPO REAL</span>
             </h2>
+
+            <div className="mt-6">
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-semibold block mb-3">Disponible en</span>
+              <div className="flex items-center gap-4">
+                {[
+                  { src: "/foto1.jpeg", alt: "Kick", href: "https://kick.com/juanortizz13", delay: 0 },
+                  { src: "/foto2.png", alt: "Kick", href: "https://kick.com/elguanaa", delay: 0.1 },
+                ].map(({ src, alt, href, delay }) => (
+                  <motion.a
+                    key={src}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay }}
+                    whileHover={{ scale: 1.06, y: -3 }}
+                    className="relative group cursor-pointer"
+                  >
+                    <div className="absolute -inset-1 rounded-xl bg-linear-to-br from-[rgba(122,0,18,0.5)] to-[rgba(212,175,55,0.3)] opacity-0 group-hover:opacity-100 blur-md transition-all duration-300" />
+                    <div className="relative rounded-xl border border-[rgba(212,175,55,0.25)] overflow-hidden w-20 h-20 group-hover:border-[rgba(212,175,55,0.6)] transition-all duration-300">
+                      <Image src={src} alt={alt} fill className="object-cover" />
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed text-pretty">
               Somos el <span className="text-gold font-semibold">único servicio</span> que transmite el 100% del

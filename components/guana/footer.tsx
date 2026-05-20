@@ -4,15 +4,30 @@ import { MessageCircle, Instagram, Send } from "lucide-react"
 const navCols = [
   {
     title: "Servicio",
-    links: ["Boosting", "Streaming en vivo", "Precios", "Cómo funciona"],
+    links: [
+      { label: "Boosting", href: "#precios" },
+      { label: "Streaming en vivo", href: "#streaming" },
+      { label: "Precios", href: "#precios" },
+      { label: "Cómo funciona", href: "#como" },
+    ],
   },
   {
     title: "Soporte",
-    links: ["FAQ", "Discord", "WhatsApp", "Contacto"],
+    links: [
+      { label: "FAQ", href: "#faq" },
+      { label: "Discord", href: "https://discord.gg/dzfmNbs8K", external: true },
+      { label: "WhatsApp", href: "https://chat.whatsapp.com/Go4eq55QTDUJ3gOdxefrBc?mode=gi_t", external: true },
+      { label: "Contacto", href: "#contacto" },
+    ],
   },
   {
     title: "Legal",
-    links: ["Términos", "Privacidad", "Reembolsos", "Cookies"],
+    links: [
+      { label: "Términos", href: "#" },
+      { label: "Privacidad", href: "#" },
+      { label: "Reembolsos", href: "#" },
+      { label: "Cookies", href: "#" },
+    ],
   },
 ]
 
@@ -41,12 +56,18 @@ export function Footer() {
               resultados élite.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              {[MessageCircle, Send, Instagram].map((Icon, i) => (
+              {[
+                { Icon: MessageCircle, href: "https://discord.gg/dzfmNbs8K", label: "Discord" },
+                { Icon: Send, href: "https://chat.whatsapp.com/Go4eq55QTDUJ3gOdxefrBc?mode=gi_t", label: "WhatsApp" },
+                { Icon: Instagram, href: "https://www.instagram.com/guanaboosting?igsh=emhlaWZpNGtobTJy&utm_source=qr", label: "Instagram" },
+              ].map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[rgba(212,175,55,0.2)] bg-card/60 text-gold hover:bg-[rgba(212,175,55,0.08)] hover:border-gold transition"
-                  aria-label="social"
+                  aria-label={label}
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -60,9 +81,13 @@ export function Footer() {
                 <h4 className="font-display text-sm tracking-[0.18em] text-gold uppercase">{col.title}</h4>
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
-                    <li key={l}>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition">
-                        {l}
+                    <li key={l.label}>
+                      <a
+                        href={l.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition"
+                        {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {l.label}
                       </a>
                     </li>
                   ))}

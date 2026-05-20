@@ -10,7 +10,7 @@ const channels = [
     icon: MessageCircle,
     desc: "Respuesta inmediata · Streaming privado",
     color: "from-[#5865F2] to-[#3a45c4]",
-    href: "#",
+    href: "https://discord.gg/dzfmNbs8K",
   },
   {
     name: "WhatsApp",
@@ -18,7 +18,7 @@ const channels = [
     icon: Send,
     desc: "Atención personalizada · Pagos rápidos",
     color: "from-[#25D366] to-[#128C7E]",
-    href: "#",
+    href: "https://chat.whatsapp.com/Go4eq55QTDUJ3gOdxefrBc?mode=gi_t",
   },
   {
     name: "Instagram",
@@ -26,7 +26,7 @@ const channels = [
     icon: Instagram,
     desc: "Promos exclusivas · Reels de partidos",
     color: "from-[#E1306C] to-[#833AB4]",
-    href: "#",
+    href: "https://www.instagram.com/guanaboosting?igsh=emhlaWZpNGtobTJy&utm_source=qr",
   },
 ]
 
