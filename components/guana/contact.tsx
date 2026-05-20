@@ -14,7 +14,7 @@ const channels = [
   },
   {
     name: "WhatsApp",
-    handle: "+54 9 11 0000 0000",
+    handle: "+54 9 11 2310-6634",
     icon: Send,
     desc: "Atención personalizada · Pagos rápidos",
     color: "from-[#25D366] to-[#128C7E]",

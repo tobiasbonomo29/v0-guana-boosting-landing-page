@@ -1,8 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Eye, Users, MessageSquare, Heart } from "lucide-react"
+import { Eye, Users, MessageSquare, Heart, ExternalLink } from "lucide-react"
 import Image from "next/image"
+
+const KICK_CHANNEL = "juanortizz13"
 
 export function Streaming() {
   return (
@@ -35,66 +37,57 @@ export function Streaming() {
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
                 </div>
-                <span className="text-[10px] text-muted-foreground tracking-wider">guana_boosting · LIVE</span>
-                <span className="text-[10px] text-muted-foreground">●●●</span>
+                <a
+                  href={`https://kick.com/${KICK_CHANNEL}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-muted-foreground tracking-wider hover:text-gold transition"
+                >
+                  kick.com/{KICK_CHANNEL} · LIVE
+                </a>
+                <a
+                  href={`https://kick.com/${KICK_CHANNEL}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir en Kick"
+                  className="text-muted-foreground hover:text-gold transition"
+                >
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </div>
 
-              {/* Video area */}
-              <div className="relative aspect-video">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/stream-mockup.jpg')" }}
+              {/* Kick live player */}
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  src={`https://player.kick.com/${KICK_CHANNEL}`}
+                  title={`${KICK_CHANNEL} en vivo en Kick`}
+                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                  frameBorder={0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
-
-                {/* Live badge */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded bg-red-600 px-2.5 py-1 text-[11px] font-bold tracking-widest text-white live-pulse">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                  EN VIVO
-                </div>
-
-                {/* Viewer count */}
-                <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded bg-black/60 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-white border border-white/10">
-                  <Eye className="h-3 w-3" />
-                  1,247
-                </div>
-
-                {/* Score overlay */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-3 rounded-md bg-black/70 backdrop-blur px-4 py-2 border border-[rgba(212,175,55,0.3)]">
-                  <span className="font-display text-lg text-gold">3</span>
-                  <span className="text-xs text-muted-foreground">VS</span>
-                  <span className="font-display text-lg text-foreground">1</span>
-                  <span className="text-[10px] uppercase tracking-wider text-gold ml-1">82'</span>
-                </div>
-
-                {/* Bottom info */}
-                <div className="absolute bottom-0 inset-x-0 p-4">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full gold-gradient flex items-center justify-center text-black font-display text-sm">
-                      GB
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-white">Pro Player · Rank I</div>
-                      <div className="text-[10px] text-white/60">FUT Champions Finals · Game 8/15</div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
-              {/* Chat */}
-              <div className="bg-[#0a0a0a] border-t border-[rgba(212,175,55,0.15)] p-3 space-y-1.5 text-[11px]">
-                <div className="flex gap-2">
-                  <span className="text-gold font-semibold">Owner:</span>
-                  <span className="text-muted-foreground">Vamos! 3 a 1, faltan 8 minutos 🔥</span>
+              {/* Footer action */}
+              <div className="flex items-center justify-between bg-[#0a0a0a] border-t border-[rgba(212,175,55,0.15)] px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <span className="relative inline-flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                  </span>
+                  <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
+                    Transmisión oficial en Kick
+                  </span>
                 </div>
-                <div className="flex gap-2">
-                  <span className="text-red-400 font-semibold">ProPlayer:</span>
-                  <span className="text-muted-foreground">Tranqui, lo cerramos seguro</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="text-gold font-semibold">Owner:</span>
-                  <span className="text-muted-foreground">Increíble el jugadazo</span>
-                </div>
+                <a
+                  href={`https://kick.com/${KICK_CHANNEL}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-gold hover:underline"
+                >
+                  Ver en Kick
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </div>
             </div>
 
@@ -200,7 +193,9 @@ export function Streaming() {
                 Empezar ahora
               </a>
               <a
-                href="#contacto"
+                href="https://discord.gg/dzfmNbs8K"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-md font-semibold border border-[rgba(212,175,55,0.3)] text-gold hover:bg-[rgba(212,175,55,0.06)] transition"
               >
                 Ver demo en Discord

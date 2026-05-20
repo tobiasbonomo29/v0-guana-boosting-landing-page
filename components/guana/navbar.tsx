@@ -63,13 +63,18 @@ export function Navbar() {
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
-          <span className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
+          <a
+            href="https://kick.com/juanortizz13"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground hover:text-gold transition"
+          >
             <span className="relative inline-flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
             </span>
             En vivo ahora
-          </span>
+          </a>
           <a
             href="#precios"
             className="relative inline-flex items-center justify-center px-5 py-2.5 rounded-md font-semibold text-sm text-black gold-gradient hover:opacity-90 transition glow-gold"
