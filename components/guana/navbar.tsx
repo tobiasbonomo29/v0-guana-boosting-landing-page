@@ -64,7 +64,7 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="https://kick.com/juanortizz13"
+            href="https://kick.com/elguanaa"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground hover:text-gold transition"

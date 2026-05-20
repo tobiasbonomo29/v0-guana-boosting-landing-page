@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Eye, Users, MessageSquare, Heart, ExternalLink } from "lucide-react"
 import Image from "next/image"
 
-const KICK_CHANNEL = "juanortizz13"
+const KICK_CHANNEL = "elguanaa"
 
 export function Streaming() {
   return (

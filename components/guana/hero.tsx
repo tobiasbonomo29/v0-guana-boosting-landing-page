@@ -102,7 +102,7 @@ export function Hero() {
               <span className="absolute inset-0 rounded-md shimmer opacity-0 group-hover:opacity-100 transition" />
             </a>
             <a
-              href="https://kick.com/juanortizz13"
+              href="https://kick.com/elguanaa"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md font-semibold text-foreground border border-[rgba(212,175,55,0.3)] bg-background/40 backdrop-blur hover:border-gold hover:bg-background/60 transition"
